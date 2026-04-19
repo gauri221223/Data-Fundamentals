@@ -1,0 +1,19 @@
+CREATE TABLE students (student_id INT,name VARCHAR(50),department VARCHAR(10),math INT,science INT,programming INT,attendance INT);
+
+INSERT INTO students VALUES(1,'Amit','CS',78,85,90,92);
+INSERT INTO students VALUES(2,'Riya','CS',88,79,85,90);
+INSERT INTO students VALUES(3,'Karan','IT',65,70,72,80);
+INSERT INTO students VALUES(4,'Pooja','IT',92,91,95,96);
+INSERT INTO students VALUES(5,'Rahul','CS',55,60,58,70);
+
+SELECT * FROM students;
+
+SELECT name,(math + science + programming)/3.0 AS avg_marks FROM students;
+
+SELECT name,(math + science + programming)/3.0 AS avg_marks FROM students ORDER BY avg_marks DESC;
+
+SELECT department, AVG((math + science + programming)/3.0) AS dept_avg FROM students GROUP BY department;
+
+SELECT * FROM students WHERE math < 60 OR science < 60 OR programming < 60;
+
+SELECT AVG((math + science + programming)/3.0) AS class_avg FROM students;
